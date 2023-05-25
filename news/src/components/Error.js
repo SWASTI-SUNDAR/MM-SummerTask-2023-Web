@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Error(props) {
+function Error() {
  
   return (
-    <div>
-      <h1>
-      404 error
-      </h1>
-      <p>This page dosen't exist</p>
-    </div>
+    <>
+    <h1>
+    404 error
+    </h1>
+    <p>This page dosen't exist</p>
+    </>
   )
 }
 

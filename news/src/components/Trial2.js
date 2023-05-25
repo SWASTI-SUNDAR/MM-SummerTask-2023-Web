@@ -13,8 +13,8 @@ function Trial2() {
     useEffect(() => {
         // const url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=c2589ed6562540219cf479532d3944a71`; 
         const getart = async () => {
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=tech&apiKey=c2589ed6562540219cf479532d3944a7`)
             //const response= await axios.get(url)
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=tech&apiKey=c2589ed6562540219cf479532d3944a7`)
             console.log(response)
             setArticles(response.data.articles)
 
