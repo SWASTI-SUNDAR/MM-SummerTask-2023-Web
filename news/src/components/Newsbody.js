@@ -10,19 +10,15 @@ import Typography from '@mui/material/Typography';
 
 
 const Newsbody = () => {
-    const [News, setNews] = useState([]);
+    const [articles, setArticles] = useState([]);
     const getNews = async () => {
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/todos/1/posts');
-            setNews(await response.json());
-            console.log(News)
+            setArticles(await response.json());
         } catch (error) {
             console.log("my error is " + error);
         }
-       
-
     }
-
     useEffect(() => {
         getNews();
     }, []);
@@ -31,10 +27,10 @@ const Newsbody = () => {
         <>
             <Grid container>
             {
-                News.map((curNews)=>{
+                articles.map((curNews)=>{
                     return(
                         <>
-                        <Grid item md={4}>
+                        <Grid item md={4} marginLeft="2rem">
                         <Card sx={{ maxWidth: 345 }}>
                             <CardMedia
                                 component="img"
@@ -57,11 +53,8 @@ const Newsbody = () => {
                         </Card>
                     </Grid>
                         </>
-                        
                     )
                 })
-               
-
             }
             </Grid>
         </>

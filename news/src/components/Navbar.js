@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <>
     <React.Fragment>
-    <AppBar>
+    <AppBar >
       <Toolbar>
       <IconButton >
       <NewspaperRoundedIcon fontSize='large'/>
