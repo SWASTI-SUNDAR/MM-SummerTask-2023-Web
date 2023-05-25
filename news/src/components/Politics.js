@@ -8,19 +8,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Margin } from '@mui/icons-material';
-function Trial2() {
+function Bussiness() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
         // const url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=c2589ed6562540219cf479532d3944a71`; 
         const getart = async () => {
             //const response= await axios.get(url)
-            const response = await axios.get(`https://newsapi.org/v2/everything?q=tech&apiKey=c2589ed6562540219cf479532d3944a7`)
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=economy&apiKey=6d5f46517dde49bab76fb3220cad5338`)
             console.log(response)
             setArticles(response.data.articles)
 
         }
-        getart()
-
+     getart();
     }, [])
     return (
         <div>
@@ -49,7 +48,6 @@ function Trial2() {
                                             <Button variant="outlined" href={curNews.url} size='small'  disableElevation>
                                                 Read More
                                             </Button>
-                                        
                                         </CardActions>
                                     </Card>
                                 </Grid>
@@ -65,4 +63,4 @@ function Trial2() {
     )
 }
 
-export default Trial2
+export default Bussiness
