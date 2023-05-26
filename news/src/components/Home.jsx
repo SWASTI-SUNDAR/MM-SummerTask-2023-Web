@@ -49,7 +49,7 @@ function Home() {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button variant="outlined" href={curNews.url} size='small'  disableElevation>
+                                            <Button variant="contained" href={curNews.url} size='small'  disableElevation>
                                                 Read More
                                             </Button>
                                         
