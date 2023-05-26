@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Margin } from '@mui/icons-material';
+import Navbar from './Navbar';
 function World() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
@@ -23,6 +24,9 @@ function World() {
 
     }, [])
     return (
+        <>
+        <Navbar/>
+    
         <div>
             <Grid container spacing={2} sx={{mt:'6rem',pl:12}}>
                 {
@@ -61,6 +65,7 @@ function World() {
                 }
             </Grid>
         </div>
+        </>
     )
 }
 

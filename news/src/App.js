@@ -16,7 +16,6 @@ import Bussiness from "./components/Politics";
 function App() {
   return (
     <>
-    <Navbar/>
       <Routes>
          <Route  path="/" Component={Mainheader}/>
          <Route  index  path="home" Component={Home}/>

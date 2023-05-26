@@ -1,8 +1,8 @@
 import React from 'react'
+import './Style.css';
 import { AppBar, Toolbar, Stack, Typography, IconButton, Button, MenuItem } from '@mui/material'
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 import { Link, NavLink } from 'react-router-dom';
-import Newsbody from '../ignore/Newsbody';
 function Navbar() {
   return (
     <>
@@ -12,7 +12,6 @@ function Navbar() {
            <IconButton>
            <NewspaperRoundedIcon style={{color:'white',}}/>
            </IconButton>
-           
             <Stack direction='row' spacing={2} sx={{ marginLeft: 'auto' }} >
               <NavLink to="/home" style={{ textDecoration: 'none' }} ><MenuItem style={{ paddingLeft: 13, textDecoration: 'none', color: 'white', }}> Home</MenuItem></NavLink>
               <NavLink to="/general" style={{ textDecoration: 'none' }}><MenuItem style={{ paddingLeft: 13, textDecoration: 'none', color: 'white' }}> Crypto</MenuItem></NavLink>

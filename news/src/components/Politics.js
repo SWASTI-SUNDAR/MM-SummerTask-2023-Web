@@ -8,7 +8,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Margin } from '@mui/icons-material';
-function Bussiness() {
+import Navbar from './Navbar';
+function Politics() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
         // const url=`https://newsapi.org/v2/top-headlines?country=in&apiKey=c2589ed6562540219cf479532d3944a71`; 
@@ -22,6 +23,9 @@ function Bussiness() {
      getart();
     }, [])
     return (
+        <>
+        <Navbar/>
+        
         <div>
             <Grid container spacing={2} sx={{mt:'6rem',pl:12}}>
                 {
@@ -60,7 +64,8 @@ function Bussiness() {
                 }
             </Grid>
         </div>
+        </>
     )
 }
 
-export default Bussiness
+export default Politics

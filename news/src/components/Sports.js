@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Margin } from '@mui/icons-material';
+import Navbar from './Navbar';
 function Sports() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
@@ -22,6 +23,9 @@ function Sports() {
 
     }, [])
     return (
+        <>
+        <Navbar/>
+
         <div>
             <Grid container spacing={2} sx={{mt:'6rem',pl:12}}>
                 {
@@ -59,6 +63,7 @@ function Sports() {
                 }
             </Grid>
         </div>
+        </>
     )
 }
 
