@@ -6,7 +6,7 @@ function Mainheader() {
     return (
         <>
             <Navbar />
-            <Home/>
+            <Home />
         </>
     )
 }

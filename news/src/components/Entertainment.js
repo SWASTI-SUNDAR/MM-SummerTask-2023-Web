@@ -37,7 +37,7 @@ function Entertainment() {
                                     <Card sx={{ maxWidth: 345, maxHeight: 345,padding:'3px' }} >
                                         <CardMedia
                                             component="img"
-                                            alt="green iguana"
+                                            alt="Loading...."
                                             height="140"
                                             image={curNews.urlToImage}
                                         />
@@ -50,7 +50,7 @@ function Entertainment() {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button variant="outlined" href={curNews.url} size='small'  disableElevation>
+                                            <Button variant="contained" href={curNews.url} size='small'  disableElevation>
                                                 Read More
                                             </Button>
                                         </CardActions>

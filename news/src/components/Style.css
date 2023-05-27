@@ -54,3 +54,10 @@ body{
 .user img{
     border-radius: 100%;
 }
+.favbar{
+    color: #fff;
+}
+.active{
+    color: rgb(177, 174, 172);
+    text-decoration:underline;
+}

@@ -13,8 +13,9 @@ import Science from "./components/Science";
 import Fashion from "./components/Fashion";
 import Error from "./components/Error";
 import Bussiness from "./components/Politics";
+import Search from "./components/Search";
 function App() {
-  return (
+    return (
     <>
       <Routes>
          <Route  path="/" Component={Mainheader}/>

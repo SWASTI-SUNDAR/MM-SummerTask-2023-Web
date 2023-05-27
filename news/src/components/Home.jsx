@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Margin } from '@mui/icons-material';
 import Navbar from './Navbar';
+import { NavLink } from 'react-router-dom';
 function Home() {
     const [articles, setArticles] = useState([])
     useEffect(() => {
@@ -24,47 +25,51 @@ function Home() {
     }, [])
     return (
         <>
-        <Navbar/>
-       
-        <div>
-            <Grid container spacing={2} sx={{mt:'6rem',pl:12}}>
-                {
-                    articles.map((curNews) => {
-                        return (
-                            <>
-                                <Grid item md={4}  justifyContent="center" alignItems="center">
-                                    <Card sx={{ maxWidth: 345, maxHeight: 345,padding:'3px' }} >
-                                        <CardMedia
-                                            component="img"
-                                            alt="green iguana"
-                                            height="140"
-                                            image={curNews.urlToImage}
-                                        />
-                                        <CardContent>
-                                            <Typography gutterBottom variant="h6" component="div">
-                                                {curNews.title.slice(0, 60)}
-                                            </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {curNews.description.slice(0, 80)}...
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            <Button variant="contained" href={curNews.url} size='small'  disableElevation>
-                                                Read More
-                                            </Button>
-                                        
-                                        </CardActions>
-                                    </Card>
-                                </Grid>
-                            </>
+            <Navbar />
 
-                        )
-                    })
+            <div>
+                <Grid container spacing={2} sx={{ mt: '6rem', pl: 12 }}>
+                    {
+                        articles.map((curNews) => {
+                            return (
+                                <>
+                                    <Grid item md={4} justifyContent="center" alignItems="center">
+                                        <Card sx={{ maxWidth: 345, maxHeight: 345, padding: '3px' }} >
+                                            <CardMedia
+                                                component="img"
+                                                alt="green iguana"
+                                                height="140"
+                                                image={curNews.urlToImage}
+                                            />
+                                            <CardContent>
+                                                <Typography gutterBottom variant="h6" component="div">
+                                                    {curNews.title.slice(0, 60)}
+                                                </Typography>
+                                                <Typography variant="body2" color="text.secondary">
+                                                    {curNews.description.slice(0, 80)}...
+                                                </Typography>
+                                            </CardContent>
+                                            <CardActions  >
+                                                <Button variant="contained" href={curNews.url} size='small' disableElevation>
+                                                    Read More
+                                                </Button>
+                                                <Typography marginLeft={"auto"}>
+                                                    .
+                                                    {curNews.author}
+
+                                                </Typography>
+                                            </CardActions>
+                                        </Card>
+                                    </Grid>
+                                </>
+
+                            )
+                        })
 
 
-                }
-            </Grid>
-        </div>
+                    }
+                </Grid>
+            </div>
         </>
     )
 }
