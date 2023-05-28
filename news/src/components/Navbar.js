@@ -6,8 +6,10 @@ import { Link, NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CssBaseline from '@mui/material/CssBaseline';
+import Switch from '@mui/material/Switch';
 
-function Navbar() {
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
+function Navbar({change,check}) {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -17,7 +19,7 @@ function Navbar() {
   return (
     <React.Fragment>
       <CssBaseline>
-        <AppBar style={{ backgroundColor: '#1B1212' }}>
+        <AppBar style={{ backgroundColor: '#1B1212' }} >
           <Toolbar>
             <IconButton>
               <NewspaperRoundedIcon style={{ color: 'lightblue' }} />
@@ -60,7 +62,8 @@ function Navbar() {
                 )
 
               }
-            </Stack>
+              </Stack>
+              <Switch {...label} onChange={change} checked={check} />
           </Toolbar>
         </AppBar>
       </CssBaseline>
