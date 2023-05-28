@@ -7,6 +7,7 @@ import ImprovrdNavbar from "./components/ImprovedNavbar"
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const[darkMode,setDarkMode]=useState(false)
@@ -19,7 +20,7 @@ function App() {
     <>
     <ThemeProvider theme={darkTheme}>
     <CssBaseline>
-    <Navbar check={darkMode} change={()=>setDarkMode(!darkMode)} />
+    <Navbar check={darkMode} change={()=>setDarkMode(!darkMode)}  />
     <Routes>
     <Route index path="/" element={<Fetchdata cat="general"/>} />
     <Route  path="home" element={<Fetchdata cat="general"/>} />
@@ -33,6 +34,7 @@ function App() {
     <Route path="business" element={<Fetchdata cat="business"/>} />
     <Route path="*" Component={Error} />
     </Routes>
+    <Footer/>
     </CssBaseline>
     </ThemeProvider>
     </>

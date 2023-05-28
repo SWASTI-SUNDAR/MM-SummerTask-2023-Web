@@ -18,22 +18,21 @@ function Search(props) {
     }
     useEffect(() => {
         getData(Api);
-    },[name])
-    return (
-        <div style={{ margin: "15rem" }}>
-            <input type="text" value={name} onChange={Setting} />
-            {results.map((allResults) => {
-                return (
-                    <div>
-                        {allResults.title}
-                    </div>
-                )
-            })}
-        </div>
-    )
+    }, [name])
+    return (<>
+        <input type="text" value={name} onChange={Setting} />
+        {results.map((allResults) => {
+            return (
+                <div>
+                    {allResults.title}
+                </div>
+            )
+        })}
+        </>
+            )
 }
 
-export default Search
+            export default Search
 
 
 

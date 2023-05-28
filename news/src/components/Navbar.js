@@ -7,6 +7,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CssBaseline from '@mui/material/CssBaseline';
 import Switch from '@mui/material/Switch';
+import Search from "./Search"
+import { DarkMode } from '@mui/icons-material';
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 function Navbar({change,check}) {
@@ -19,7 +21,7 @@ function Navbar({change,check}) {
   return (
     <React.Fragment>
       <CssBaseline>
-        <AppBar style={{ backgroundColor: '#1B1212' }} >
+        <AppBar style={{ backgroundColor: '#1B1212' }}>
           <Toolbar>
             <IconButton>
               <NewspaperRoundedIcon style={{ color: 'lightblue' }} />
@@ -37,10 +39,10 @@ function Navbar({change,check}) {
               <NavLink className={"favbar"} to="/entertainment" style={{ textDecoration: 'none' }}><MenuItem style={{ paddingLeft: 13 }}> Entertainment </MenuItem></NavLink>
              </Stack>
             <Stack direction='row' spacing={1} sx={{ marginRightt: 'auto', marginLeft: 'auto' }} >
-
+            
               {
                 isAuthenticated ? (
-                  <Button variant="contained" style={{ backgroundColor: "red" }}
+                  <Button variant="contained" style={{ backgroundColor: "red j" }}
                     onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                     Logout
                   </Button>
@@ -63,7 +65,9 @@ function Navbar({change,check}) {
 
               }
               </Stack>
+              <Stack>
               <Switch {...label} onChange={change} checked={check} />
+              </Stack>
           </Toolbar>
         </AppBar>
       </CssBaseline>
