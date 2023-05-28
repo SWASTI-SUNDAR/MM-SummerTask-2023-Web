@@ -1,20 +1,34 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
 function Search(props) {
-     
-    let Api = `http://hn.algolia.com/api/v1/search?query=html`;
+    const [name, setName] = useState("");
+    const [results, SetResults] = useState([]);
+    const Setting = (event) => {
+        let hg = event.target.value
+        setName(hg);
+        console.log(hg)
+    }
+    let Api = `http://hn.algolia.com/api/v1/search?query=${name}`;
     const getData = async (url) => {
-        let res = await fetch(url);
-        const data = res.json();
-        console.log(data);
+        let res = await axios.get(url);
+        // const data = res.json();
+        SetResults(res.data.hits);
 
     }
     useEffect(() => {
         getData(Api);
-    }, [])
+    },[name])
     return (
-        <div>
-
+        <div style={{ margin: "15rem" }}>
+            <input type="text" value={name} onChange={Setting} />
+            {results.map((allResults) => {
+                return (
+                    <div>
+                        {allResults.title}
+                    </div>
+                )
+            })}
         </div>
     )
 }

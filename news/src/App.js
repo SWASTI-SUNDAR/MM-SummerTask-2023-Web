@@ -1,35 +1,26 @@
 import Navbar from "./components/Navbar";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Mainheader from "./components/Mainheader";
-import Sports from "./components/Sports";
-import General from "./components/General";
-import Health from "./components/Health";
-import Entertainment from "./components/Entertainment";
-import Education from "./components/Education";
-import World from "./components/World";
-import Science from "./components/Science";
-import Fashion from "./components/Fashion";
 import Error from "./components/Error";
-import Bussiness from "./components/Politics";
-import Search from "./components/Search";
+import Fetchdata from "./components/Fetchdata";
+import ImprovrdNavbar from "./components/ImprovedNavbar"
 function App() {
-    return (
+  return (
     <>
-      <Routes>
-         <Route  path="/" Component={Mainheader}/>
-         <Route  index  path="home" Component={Home}/>
-         <Route  path="sports" Component={Sports}/>
-         <Route  path="general" Component={General}/>
-         <Route  path="health" Component={Health}/>
-         <Route  path="entertainment" Component={Entertainment}/>
-         <Route  path="education" Component={Education}/>
-         <Route  path="world" Component={World}/>
-         <Route  path="science" Component={Science}/>
-         <Route  path="fashion" Component={Fashion}/>
-         <Route  path="bussiness" Component={Bussiness}/>
-         <Route  path="*" Component={Error}/>
+    
+    <Navbar/>
+    <Routes>
+        <Route index path="/" element={<Fetchdata cat="general"/>} />
+        <Route  path="home" element={<Fetchdata cat="general"/>} />
+        <Route path="sports" element={<Fetchdata cat="sports"/>} />
+        <Route path="general" element={<Fetchdata cat="bitcoin"/>} />
+        <Route path="health" element={<Fetchdata cat="health"/>} />
+        <Route path="technology" element={<Fetchdata cat="technology"/>} />
+        <Route path="entertainment" element={<Fetchdata cat="entertainment"/>} />
+        <Route path="science" element={<Fetchdata cat="science"/>} />
+        <Route path="fashion" element={<Fetchdata cat="fashion"/>} />
+        <Route path="business" element={<Fetchdata cat="business"/>} />
+        <Route path="*" Component={Error} />
       </Routes>
       <div />
     </>
