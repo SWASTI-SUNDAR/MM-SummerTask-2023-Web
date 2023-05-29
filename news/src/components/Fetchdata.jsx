@@ -51,7 +51,7 @@ function Fetchdata({ cat }) {
                                         <Button size="small" href={curNews.url} target='blank'>Read More</Button>
                                         <Typography marginLeft="auto" display="flex">
                                         <Typography>
-                                        {curNews.author ? curNews.author.slice(0,10):("")}
+                                        {curNews.author ? curNews.author.slice(0,10):("S. Swasti")}
                                         </Typography>
                                         <AccountCircleIcon></AccountCircleIcon>
                                         </Typography>

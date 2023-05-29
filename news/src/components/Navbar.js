@@ -39,7 +39,10 @@ function Navbar({ change, check }) {
                   <Typography  style={{ color: "aqua", fontFamily: "sans", fontSize: "1.5rem" }}  >
                   <b>NEWS24</b>
                   </Typography>
-                   
+                  <Stack marginLeft="auto">
+                  <Switch {...label} onChange={change} checked={check} />
+                </Stack>
+                    
                   <Stack marginLeft="auto" >
                   {
                     isAuthenticated && (
@@ -50,7 +53,7 @@ function Navbar({ change, check }) {
 
                   }
                 </Stack>
-                  
+                
                 </>
               ) : (
                 <>
