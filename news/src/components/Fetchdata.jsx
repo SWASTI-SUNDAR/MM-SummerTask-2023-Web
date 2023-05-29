@@ -10,18 +10,18 @@ import CardActionArea from '@mui/material';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
-function Fetchdata({ cat }) {
+function Fetchdata({ cat,name }) {
     const [data, setData] = useState([])
 
     const getart = async () => {
         const res = await axios.get(cat ? `https://newsapi.org/v2/top-headlines?country=in&category=${cat}&apiKey=c2589ed6562540219cf479532d3944a7`
             : `https://newsapi.org/v2/top-headlines?country=in&apiKey=c2589ed6562540219cf479532d3944a7`)
-        console.log(res)
+        console.log(cat)
         setData(res.data.articles)
     }
     useEffect(() => {
         getart();
+        document.title = `NEWS24-${name}`;
     }, [cat])
     return (
         <>
@@ -34,7 +34,7 @@ function Fetchdata({ cat }) {
                                 <Card sx={{ maxWidth: 339 }} style={{padding:".5rem",marginTop:".5rem",border:"1px solid"}}>
                                     <CardMedia
                                         sx={{ height: 140 }}
-                                        image={curNews.urlToImage ? curNews.urlToImage : ("oh `no! image not found") }
+                                        image={curNews.urlToImage ? curNews.urlToImage : (`{}`) }
                                     />
                                     <CardContent>
                                         <Typography gutterBottom variant="h5" component="div">

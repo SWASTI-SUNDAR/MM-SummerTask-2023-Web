@@ -22,16 +22,16 @@ function App() {
     <CssBaseline>
     <Navbar check={darkMode} change={()=>setDarkMode(!darkMode)}  />
     <Routes>
-    <Route index path="/" element={<Fetchdata cat="general"/>} />
-    <Route  path="home" element={<Fetchdata cat="general"/>} />
-    <Route path="sports" element={<Fetchdata cat="sports"/>} />
-    <Route path="general" element={<Fetchdata cat="bitcoin"/>} />
-    <Route path="health" element={<Fetchdata cat="health"/>} />
-    <Route path="technology" element={<Fetchdata cat="technology"/>} />
-    <Route path="entertainment" element={<Fetchdata cat="entertainment"/>} />
-    <Route path="science" element={<Fetchdata cat="science"/>} />
-    <Route path="fashion" element={<Fetchdata cat="fashion"/>} />
-    <Route path="business" element={<Fetchdata cat="business"/>} />
+    <Route index path="/" element={<Fetchdata cat="" name="Get Your Daily Dose Of News" />} />
+    <Route  path="home" element={<Fetchdata cat="general" name="Home" />} />
+    <Route path="sports" element={<Fetchdata cat="sports" name="Sports"/>} />
+    <Route path="general" element={<Fetchdata cat="bitcoin" name="Crypto"/>} />
+    <Route path="health" element={<Fetchdata cat="health" name="Health & Food"/>} />
+    <Route path="technology" element={<Fetchdata cat="technology" name="Technology"/>} />
+    <Route path="entertainment" element={<Fetchdata cat="entertainment" name="Entertainment" />} />
+    <Route path="science" element={<Fetchdata cat="science" name="Science" />} />
+    <Route path="fashion" element={<Fetchdata cat="fashion" name="Fashion & Beauty" />} />
+    <Route path="business" element={<Fetchdata cat="business" name="Business"/>} />
     <Route path="*" Component={Error} />
     </Routes>
     <Footer/>
