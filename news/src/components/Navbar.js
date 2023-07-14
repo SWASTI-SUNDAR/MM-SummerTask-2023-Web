@@ -2,20 +2,18 @@ import React from 'react'
 import "./Style.css"
 import { AppBar, Toolbar, Stack, Typography, IconButton, Button, MenuItem, Menu, Tab, useTheme } from '@mui/material'
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CssBaseline from '@mui/material/CssBaseline';
 import Switch from '@mui/material/Switch';
-import Search from "./Search"
 import { Business, DarkMode, Home } from '@mui/icons-material';
 import Drawercmop from './Drawercmop';
 import useMediaQuery from '@mui/material/useMediaQuery';
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 function Navbar({ change, check }) {
   const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  // const { logout } = useAuth0();
+  const { user, isAuthenticated, isLoading, logout } = useAuth0();
   const PAGES = ["Home", "Health", "Science", "Technology", "Business", "Entertainment", "Sports"];
   const theme = useTheme();
   const ismatching = useMediaQuery(theme.breakpoints.down("md"))
@@ -25,6 +23,8 @@ function Navbar({ change, check }) {
   }
   return (
     <React.Fragment>
+
+
       <CssBaseline>
         <AppBar style={{ backgroundColor: '#1B1212' }}>
           <Toolbar>
@@ -32,28 +32,28 @@ function Navbar({ change, check }) {
               ismatching ? (
                 <>
                   <Drawercmop />
-                  
-                  <IconButton style={{marginLeft:"auto"}}>
-                  <NewspaperRoundedIcon style={{ color: 'lightblue' }} />
+
+                  <IconButton style={{ marginLeft: "auto" }}>
+                    <NewspaperRoundedIcon style={{ color: 'lightblue' }} />
                   </IconButton>
-                  <Typography  style={{ color: "aqua", fontFamily: "sans", fontSize: "1.5rem" }}  >
-                  <b>NEWS24</b>
+                  <Typography style={{ color: "aqua", fontFamily: "sans", fontSize: "1.5rem" }}  >
+                    <b>NEWS24</b>
                   </Typography>
                   <Stack marginLeft="auto">
-                  <Switch {...label} onChange={change} checked={check} />
-                </Stack>
-                    
-                  <Stack marginLeft="auto" >
-                  {
-                    isAuthenticated && (
-                      <div className='user'>
-                        <img src={user.picture} style={{ height: '40px', margin: '' }} alt="" />
-                      </div>
-                    )
+                    <Switch {...label} onChange={change} checked={check} />
+                  </Stack>
 
-                  }
-                </Stack>
-                
+                  <Stack marginLeft="auto" >
+                    {
+                      isAuthenticated && (
+                        <div className='user'>
+                          <img src={user.picture} style={{ height: '40px', margin: '' }} alt="" />
+                        </div>
+                      )
+
+                    }
+                  </Stack>
+
                 </>
               ) : (
                 <>
@@ -75,7 +75,7 @@ function Navbar({ change, check }) {
 
                     {
                       isAuthenticated ? (
-                        <Button variant="contained" style={{ backgroundColor: "red j" }}
+                        <Button variant="contained" style={{ backgroundColor: "red" }}
                           onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
                           Logout
                         </Button>
@@ -104,11 +104,10 @@ function Navbar({ change, check }) {
                 </>
               )
             }
-
-
           </Toolbar>
         </AppBar>
       </CssBaseline>
+
     </React.Fragment>
   )
 }

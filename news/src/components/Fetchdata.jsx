@@ -14,20 +14,21 @@ function Fetchdata({ cat,name }) {
     const [data, setData] = useState([])
 
     const getart = async () => {
-        const res = await axios.get(cat ? `https://newsapi.org/v2/top-headlines?country=in&category=${cat}&apiKey=c2589ed6562540219cf479532d3944a7`
-            : `https://newsapi.org/v2/top-headlines?country=in&apiKey=c2589ed6562540219cf479532d3944a7`)
+        const res = await axios.get(cat ? `https://restnewsapi-production.up.railway.app/news/testing?category=${cat}`
+            : `https://restnewsapi-production.up.railway.app/news/testing`)
         console.log(cat)
-        setData(res.data.articles)
+        setData(res.data.myNews)
     }
+    console.log(data)
     useEffect(() => {
         getart();
         document.title = `NEWS24-${name}`;
     }, [cat])
     return (
         <>
-        <Grid container  marginTop={10} >
+        <Grid container  marginTop={10} minHeight={"100vh"} >
                 {
-                    data.map((curNews) => {
+                    data?.map((curNews) => {
                         return (
                             <>
                             <Grid container md={4} sx={12} marginTop="5rem"  margin="auto" padding="auto" spacing={2}  justifyContent="center">
